@@ -8,9 +8,11 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const celebritiesRouter = require('./routes/celebrities');
+const moviesRouter = require('./routes/movies');
 
-const Celebrity = require('./models/celebrity');
-const data = require('./bin/seeds');
+/* const Celebrity = require('./models/celebrity');
+const Movie = require('./models/movie');
+const data = require('./bin/seeds'); */
 
 const app = express();
 
@@ -28,6 +30,15 @@ mongoose.connect('mongodb://localhost/movies', {
   })
   .catch(error => console.error(error)); */
 
+// añadimos películas a la base de datos
+/* Movie.insertMany(data)
+  .then(result => {
+    console.log(result);
+    mongoose.connection.close();
+  })
+  .catch(error => console.error(error));
+ */
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -40,6 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/celebrities', celebritiesRouter);
+app.use('/movies', moviesRouter);
 
 // -- 404 and error handler
 

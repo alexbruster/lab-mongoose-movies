@@ -1,4 +1,4 @@
-const celebrities = [
+/* const celebrities = [
   {
     name: 'Bruja Avería',
     occupation: 'actriz y cantante',
@@ -14,6 +14,26 @@ const celebrities = [
     occupation: 'super héroe',
     catchPhrase: 'no olviden supervitaminarse y mineralizarse'
   }
+]; */
+
+// movies
+
+const movies = [
+  {
+    title: 'Averiada',
+    genre: 'drama',
+    plot: 'abracadabra'
+  },
+  {
+    title: 'Más rápido',
+    genre: 'comedia',
+    plot: 'jarlll'
+  },
+  {
+    title: 'patrulla R',
+    genre: 'aventuras',
+    plot: 'condemorrr'
+  }
 ];
 
-module.exports = celebrities;
+module.exports = movies;
